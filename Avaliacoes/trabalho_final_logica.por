@@ -10,9 +10,10 @@ programa
             }
             para(inteiro lin=0; lin < 10; lin = lin++){
                 para(inteiro  col=0; col < 12; col++){
-                    escreva("Digite o assento desejado: ")
-                    leia(lin)
-                    se(lin < 0){
+                  enquanto(lin > 0 ou col > 0){
+                  	escreva("Digite o assento desejado: ")
+                  	leia(lin)
+				se(lin < 0){
                     	pare
                     }
                     escreva("Digite a fileira desejada: ")
@@ -20,16 +21,27 @@ programa
                     se(col < 0){
                     	pare
                     }
+                    	
 				se(assentos[lin][col] == 0){
                     	assentos[lin][col] = 1
                     	escreva("Assento reservado \n")
+                    	
 				}senao{
 					escreva("Assento ocupado, escolha outro assento: ")
 					leia(lin)
-					leia(col)
+					leia(col)	
+					escreva("Assento reservado \n")
+					assentos[lin][col] = 1
 				}
-                }
-                se (lin < 0){
+				     para(lin = 0; lin < 10; lin++){
+            				para(col = 0; col < 12; col++){
+            					escreva(assentos[lin][col], " ")
+            				}
+            					escreva("\n")
+           	 		}                
+            		}
+            	}
+            	se (lin < 0){
                 	pare
                 }
             }
@@ -42,13 +54,12 @@ programa
             }
     }
 }
-
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1138; 
+ * @POSICAO-CURSOR = 564; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
